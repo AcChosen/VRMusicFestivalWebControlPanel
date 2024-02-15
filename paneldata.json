@@ -1,0 +1,86 @@
+[
+  {
+    "rows": 2,
+    "columns": 4
+  },
+  {
+    "buttonID": 0,
+    "buttonName": "Cube = ON",
+    "buttonNotes": "",
+    "buttonColor": "#aa2c2c",
+    "buttonLock": false,
+    "variableName": "cubeToggle",
+    "variableType": "bool",
+    "variableValue": true
+  },
+  {
+    "buttonID": 1,
+    "buttonName": "Test Float = 3.14",
+    "buttonNotes": "",
+    "buttonColor": "#148b04",
+    "buttonLock": false,
+    "variableName": "floatTest",
+    "variableType": "float",
+    "variableValue": 3.14159265
+  },
+  {
+    "buttonID": 2,
+    "buttonName": "Test Int = 256",
+    "buttonNotes": "",
+    "buttonColor": "#101bb7",
+    "buttonLock": false,
+    "variableName": "intTest",
+    "variableType": "int",
+    "variableValue": 256
+  },
+  {
+    "buttonID": 3,
+    "buttonName": "Current DJ = DJ #A",
+    "buttonNotes": "",
+    "buttonColor": "#0c8797",
+    "buttonLock": false,
+    "variableName": "currentDj",
+    "variableType": "string",
+    "variableValue": "DJ #A"
+  },
+  {
+    "buttonID": 4,
+    "buttonName": "Cube = OFF",
+    "buttonNotes": "",
+    "buttonColor": "#5f0202",
+    "buttonLock": false,
+    "variableName": "cubeToggle",
+    "variableType": "bool",
+    "variableValue": false
+  },
+  {
+    "buttonID": 5,
+    "buttonName": "Test Float = 69.99",
+    "buttonNotes": "",
+    "buttonColor": "#166022",
+    "buttonLock": false,
+    "variableName": "floatTest",
+    "variableType": "float",
+    "variableValue": 69.99
+  },
+  {
+    "buttonID": 6,
+    "buttonName": "Test Int = 420",
+    "buttonNotes": "",
+    "buttonColor": "#00176b",
+    "buttonLock": false,
+    "variableName": "intTest",
+    "variableType": "int",
+    "variableValue": 420
+  },
+  {
+    "buttonID": 7,
+    "buttonName": "Current DJ = DJ #B",
+    "buttonNotes": "",
+    "buttonColor": "#a600c7",
+    "buttonLock": false,
+    "variableName": "currentDj",
+    "variableType": "string",
+    "variableValue": "DJ #B"
+  }
+]

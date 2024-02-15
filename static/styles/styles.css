@@ -1,0 +1,53 @@
+.datavariableValue
+{
+    font-style: italic;
+}
+.dataVariableName
+{
+    color: orange;
+}
+.dataVariableNameAlt
+{
+    color: rgb(255, 198, 93);
+}
+.dataVariableFire
+{
+    color: rgb(255, 119, 0);
+}
+
+.dataVariableTrue
+{
+    color: rgb(0, 255, 0);
+}
+.dataVariableFalse
+{
+    color: red;
+}
+.dataVariableFloat
+{
+    color: cyan;
+}
+.dataVariableInt
+{
+    color: rgb(247, 0, 255);
+}
+.dataVariableString
+{
+    color: rgb(187, 236, 245);
+}
+
+.dataStandard
+{
+    color: white;
+}
+
+.lineCounterContainer{
+    counter-reset: line; 
+}
+.lineCounterContainer .lineNum{
+    display: block;
+}
+.lineCounterContainer .lineNum:before {
+    counter-increment: line;
+    content: counter(line);
+}

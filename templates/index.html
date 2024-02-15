@@ -1,0 +1,124 @@
+<!-- Code by AcChosen. https://github.com/AcChosen -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
+</head>
+<body class="p-3 mb-2 bg-dark text-white">
+    
+    <div class="container">
+        <nav class="navbar navbar-expand-sm navbar-dark">
+            <a href="#" class="navbar-brand">World Control Panel</a>
+            <button class="navbar-toggler" 
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#toggleMobileMenu"
+            aria-controls="toggleMobileMenu"
+            aria-expanded="false"
+            aria-label="Toggle Navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="#toggleMobileMenu"></div>
+          <ul class="navbar-nav ms=auto text-center">
+            <li>
+                <a class="nav-link" href="/home">Home</a>
+            </li>
+            <li>
+                <a class="nav-link" href="/world"><b>World</b></a>
+            </li>
+            <!-- <li>
+                <a class="nav-link" href="/stream">Stream</a>
+            </li> -->
+          </ul>
+        </nav>
+    </div>
+    <div class="container">
+
+        <div class="d-flex justify-content-center">
+            <!-- <h1>VR Music Festival Web Control Panel</h1> -->
+        </div>
+        <form id="mainForm">
+            <div class="justify-content-center mb-3">
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col">
+                        <label class="form-check-label" for="rowCounter">Rows: </label>
+                        <input type="number" class="form-control rowCounter panelUpdater" id="rowCounter" placeholder="# of Rows" value="2" min="1">
+                    </div>
+                    <div class="col">
+                        <label class="form-check-label" for="colCounter">Columns: </label>
+                        <input type="number" class="form-control colCounter panelUpdater" id="colCounter" placeholder="# of Cols" value="4" min="1" max="9">
+                    </div>
+                    <div class="col" style=" margin-top: 0.4em; margin-left: -0.5em;">
+                        <p></p>
+                        <button type="button" class="btn btn-dark saveButton" style ="background-color: #454040" id = "forceSave">
+                            <img src="/saveicon.png" style ="background-color: transparent;" width="25" height="25">
+                        </button> 
+                    </div>
+                </div>
+            </div>
+            <p id="initialize"></p>
+            <div id="buttonSet">
+            </div>
+            <div class="d-sm-flex justify-content-center" style = "padding-right: 2em;">
+                <img src="{{url_for('static', filename='pinwheel.gif')}}" style ="background-color: transparent; margin-left: 1em; margin-right: 1em; margin-top: 1em;" width="75" height="75" class="pinwheel">
+                <div style ="background-color: transparent; margin-left: 0em; margin-right: 1em; margin-top: 1.4em; font-size: x-large;" class="pinwheel">Submitting To Github Pages...</div>
+            </div>
+            <div class="mb-4 row">
+                <p></p>
+                <p></p>
+                <div class="col">
+                    <label class="form-check-label" for="newDataPreview">NEW DATA: </label>
+                                            <button
+                        type="button" 
+                        class="btn btn-danger btn-sm clearAllBtn py-0"
+                        style="font-size: x-small; position: relative; bottom: 0.2em; padding: .4em"
+                        id = "clearallbtn">Clear All</button>
+                    <div readonly id="newDataPreview" class="form-control  bg-dark text-white" rows="6" style="height:100%; font-size: x-large; overflow-y:auto; white-space: pre-wrap;"></div>
+                </div>
+                
+                <div class="d-grid gap-2 col">
+                    <p></p>
+                    
+                    <button
+                    type="button" 
+                    class="btn btn-dark btn-lg p-4 submitBtn"
+                    id = "submitChanges"  style="max-height: 20em">Submit</button>
+                    <button
+                    type="button" 
+                    class="btn btn-dark btn-lg p-1 resetBtn"
+                    id = "resetChanges"  style="max-height: 10em">Reset</button>
+                </div>
+                <div class="col">
+                    <label class="form-check-label" for="newDataPreview">CURRENT DATA <i class="dataVariableFalse">(LIVE)</i>: </label>
+                    <div readonly id="currentDataPreview" class="form-control  bg-dark text-white" rows="6" style="height:100%; font-size: x-large; overflow-y:auto; white-space: pre-wrap;"></div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="toast-container position-fixed" id="toastHolder"  style="position: relative; bottom: 30px; right: 30px;">
+    <div class="toast-container position-fixed" id="submitToastHolder"  style="position: relative; bottom: 30px; right: 8em;"></div>
+
+    </div>
+
+
+    <script type="text/javascript">
+        var pd = '{{panelData|tojson}}';
+        var cd = '{{currentData|tojson}}';
+        var nd = '{{newData|tojson}}';
+    </script>
+    <script 
+    type="text/javascript" 
+    src="{{ url_for('static', filename='index.js')}}"
+    ></script>
+</body>
+</html>

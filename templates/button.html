@@ -1,0 +1,77 @@
+<!-- <div class="row" id="r-1"> -->
+    <!-- <div class="col" id="c-1"> -->
+        <div class="mb-1">
+            <div class="d-grid gap-2">
+                <button
+                type="button" 
+                class="btn btn-dark btn-lg p-4 fButton"
+                style="font-size: x-large;"
+                id = "f1-button">Call Function</button>
+            </div>
+        </div>
+        
+        <div class="mb-1">
+            <div class="form-check">
+                <div class="row">
+                    <div class="col" style="margin-top: 0.1em;">
+                        <input class="form-check-input fEditMode panelUpdater" type="checkbox" value="" id="f1-editMode">
+                        <label class="form-check-label fEditLabel" for="f1-editMode">
+                        Edit
+                        </label>
+                    </div>
+                    <div class="col" style="margin-top: 0.1em;">
+                        <input class="form-check-input fLock panelUpdater" type="checkbox" value="" id="f1-lock">
+                        <label class="form-check-label fLockLabel" for="f1-lock">
+                        Lock
+                        </label>
+                    </div>
+                    <div class="col-5">
+                        <button
+                        type="button" 
+                        class="btn btn-danger btn-sm fClear"
+                        style="font-size: x-small;"
+                        id = "f1-clear">Clear Entry</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="f1-editDiv" class="...">
+            <div class="mb-1">
+                <label for="f1-btnName" class="form-label fButtonNameLabel">Button Name:</label>
+                <input type="functionName" class="form-control fButtonName panelUpdater" id="f1-btnName" placeholder="Button Name" value="Update Variable">
+                <p></p>
+                <label for="f1-btnNotes" class="form-label fButtonNotesLabel">Feedback Notes:</label>
+                <input type="feedbackNotes" class="form-control fButtonNotes panelUpdater" id="f1-btnNotes" placeholder="What does this button do?" value="">
+                <p></p>
+                <label for="f1-color" class="form-label fButtonColorLabel">Button Color:</label>
+                <input id = "f1-color" type = "Color" class ="form-control form-control-color fButtonColor panelUpdater" value="#454040" title="Set Button Color"/>
+            </div>
+            
+            <div class="mb-1">
+                <label for="f1-name" class="form-label fNameLabel panelUpdater" id="f1-name-l">Variable Name:</label>
+                <input type="functionName" class="form-control fName panelUpdater" id="f1-name" placeholder="Variable Name">
+            </div>
+            <div class="mb-1">
+                <p id="f1-boolSpace" class="boolSpace"></p>
+                <label for="f1-sValue" class="form-label fsValueLabel" id="f1-value-l">Value:</label>
+                <input type="functionValue" class="form-control fsValue panelUpdater" id="f1-sValue" placeholder="Value">
+                <input type="number" class="form-control fnValue panelUpdater" id="f1-nValue" placeholder="Value" min="">
+                    <input type="checkbox" class="form-check-input fbValue panelUpdater" id="f1-bValue">
+                    <label class="form-check-label fbValueLabel" for="f1-bValue" id="f1-bValue-l">
+                           Value
+                      </label>
+                <p id="f1-boolSpace2" class="boolSpace2"></p>
+            </div>
+            <label for="f1-type" class="form-label fTypeLabel">Variable Type:</label id="f1-type-l">
+            <select class="form-select fType panelUpdater" aria-label="Default select example" id="f1-type">
+                <option value="default" selected>Choose Variable Type</option>
+                <option value="bool">Bool</option>
+                <option value="int">Int</option>
+                <option value="float">Float</option>
+                <option value="string">String</option>
+                <option value="event">Custom Event</option>
+            </select>
+            <p></p>
+        </div>               
+    <!-- </div> -->
+<!-- </div> -->
